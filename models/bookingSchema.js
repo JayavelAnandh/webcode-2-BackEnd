@@ -20,7 +20,6 @@ const  bookingSchema = new mongoose.Schema(
         },
         seatsBooked:{
             type:Array,
-            maxlength:100,
             default:[]
         },
         clientName:{
