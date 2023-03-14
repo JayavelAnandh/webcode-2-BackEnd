@@ -6,7 +6,7 @@ import { signUpClient } from "./routes/signupClient.js";
 import { loginClient } from "./routes/loginClient.js";
 import { theatreRoutes } from "./routes/theatreRoutes.js";
 import { loginAdmin } from "./routes/adminRoutes.js";
-import { ppid } from "process";
+import cors from "cors"
 import { bookingRoutes } from "./routes/booking.js";
 import { bookingLogs } from "./routes/bookedlogs.js";
 // import { signUpAdmin } from "./routes/adminRoutes.js";
