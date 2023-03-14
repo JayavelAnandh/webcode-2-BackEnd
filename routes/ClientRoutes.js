@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/",async(req,res)=>{
     try {
-        const clients = await Client.find({})
+        const clients = await Client.find({}).select("-password")
         res.status(200).send(clients)
     } catch (error) {
         res.status(500).json("Internal server error")
