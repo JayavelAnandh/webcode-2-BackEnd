@@ -35,7 +35,7 @@ router.get("/",async(req,res)=>{
 
 router.get("/query",async(req,res)=>{
     try {
-        return res.send("Api works")
+        
         if(req.query){
             console.log(req.query)
             const givenquery = req.query
