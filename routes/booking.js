@@ -18,7 +18,7 @@ router.post("/",async(req,res)=>{
         res.status(200).send("Booked Successfully")
     } catch (error) {
         console.log(error)
-        res.status(500).json("Internal server error")
+        res.status(500).send(error)
     }
     
 })
