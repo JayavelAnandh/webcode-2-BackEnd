@@ -24,12 +24,6 @@ router.post("/create",async(req,res)=>{
 
 router.get("/",async(req,res)=>{
     try {
-
-        // if(req.query){
-        //     const query = req.query
-        //     const theatre = await Theatre.findOne({query})
-        //     return res.status(200).send("hi")
-        // }
         const theatre = await Theatre.find({})
         res.status(200).send(theatre)
     } catch (error) {
@@ -38,6 +32,24 @@ router.get("/",async(req,res)=>{
 
     }
 })
+
+router.get("/query",async(req,res)=>{
+    try {
+        return res.send("Api works")
+        if(req.query){
+            console.log(req.query)
+            const givenquery = req.query
+            const theatre = await Theatre.findOne(givenquery)
+            return res.status(200).send(theatre)
+        }
+        res.send("Pass a query value")
+    } catch (error) {
+        console.log(error)
+        res.status(500).json("Internal server error")
+
+    }
+})
+
 
 router.delete("/delete/:id",async(req,res)=>{
     try {
