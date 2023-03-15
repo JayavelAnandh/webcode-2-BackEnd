@@ -15,14 +15,29 @@ const theatreSchema = new mongoose.Schema(
             trim : true
         },
         showTimings:{
-            type:Array,
-            required:true,
+            show1:{
+                seatsBooked:{
+                    type:Array,
+                    maxlength:100,
+                    default:[]
+                }
+            },
+            show2:{
+                seatsBooked:{
+                    type:Array,
+                    maxlength:100,
+                    default:[]
+                }
+            },
+            show3:{
+                seatsBooked:{
+                    type:Array,
+                    maxlength:100,
+                    default:[]
+                }
+            },
         },
-        seatsBooked:{
-            type:Array,
-            maxlength:100,
-            default:[]
-        },
+        
         pricePerTicket:{
             type:Number,
             default:150
