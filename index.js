@@ -11,6 +11,7 @@ import { bookingRoutes } from "./routes/booking.js";
 import { bookingLogs } from "./routes/bookedlogs.js";
 import { isAuthorized } from "./authentication/auth.js";
 import { ShowRoutes } from "./routes/showRoutes.js";
+import { isAdmin } from "./authentication/authAdmin.js";
 // import { signUpAdmin } from "./routes/adminRoutes.js";
 
 
@@ -30,7 +31,7 @@ app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
 app.use("/clientLogin",loginClient)
 
-app.use("/theatre",theatreRoutes)
+app.use("/theatre",isAdmin,theatreRoutes)
 app.use("/bookinglogs",bookingLogs)
 
 // app.use("/adminsignup",signUpAdmin)
@@ -40,10 +41,3 @@ app.use("/booking",isAuthorized,bookingRoutes)
 
 app.use("/shows",ShowRoutes)
 app.listen(process.env.PORT)
-
-//"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTA1ODgyYjg5NWQ1NWYxZmM2ZWVlYSIsImlhdCI6MTY3ODc5MjgzNH0.wp0DzxaCwZelPBAzUnR9cQ_KycuxXRwnMKqI0BL9A3M"
-//{
-//    "name":"Admin",
-//    "email":"Admin123@gmail.com",
-//    "password":"AdminAdmin"
-//}
