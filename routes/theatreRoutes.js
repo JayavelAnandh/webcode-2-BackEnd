@@ -9,8 +9,10 @@ router.post("/create",async(req,res)=>{
             {
                 theatreName:req.body.theatreName,
                 movieName:req.body.movieName,
-                showTimings:req.body.showTimings,
-                seatsBooked:req.body.seatsBooked,
+                showTimings:re.body.showTimings,
+                // showTimings.show1.seatsBooked : req.body.showTimings.show1.seatsBooked,
+                // showTimings.show2.seatsBooked : req.body.showTimings.show2.seatsBooked,
+                // showTimings.show3.seatsBooked : req.body.showTimings.show3.seatsBooked,
                 pricePerTicket:req.body.pricePerTicket
             }
         ).save()
