@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { Client } from "../models/clientSchema.js";
-import { User } from "../models/user.js";
+
 
 
 const isAuthorized = async(req, res, next) => {
@@ -8,7 +8,7 @@ const isAuthorized = async(req, res, next) => {
    if (req.headers){
    try {
         token = req.headers["x-auth-token"]; 
-        const decode = jwt.verify(token, process.env.SecretKey); 
+        const decode = jwt.verify(token, process.env.SECRET_KEY); 
         console.log(decode)
         req.user = await Client.findById(decode.id).select("-password")
         next();
