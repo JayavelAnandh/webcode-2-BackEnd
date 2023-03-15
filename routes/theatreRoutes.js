@@ -20,7 +20,7 @@ router.post("/create", async (req, res) => {
     });
     res.status(200).json({ message: "Theatre cretaed successfully" });
   } catch (error) {
-    res.status(500).json("Internal server error");
+    res.status(500).send(error);
   }
 });
 // request.showTimings.map( show => {
