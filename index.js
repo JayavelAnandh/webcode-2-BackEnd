@@ -12,6 +12,7 @@ import { bookingLogs } from "./routes/bookedlogs.js";
 import { isAuthorized } from "./authentication/auth.js";
 import { ShowRoutes } from "./routes/showRoutes.js";
 import { isAdmin } from "./authentication/authAdmin.js";
+import { TheaterView } from "./routes/theaterView.js";
 // import { signUpAdmin } from "./routes/adminRoutes.js";
 
 
@@ -31,7 +32,10 @@ app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
 app.use("/clientLogin",loginClient)
 
+
 app.use("/theatre",isAdmin,theatreRoutes)
+
+app.use("/theatreView",TheaterView)
 app.use("/bookinglogs",bookingLogs)
 
 // app.use("/adminsignup",signUpAdmin)
