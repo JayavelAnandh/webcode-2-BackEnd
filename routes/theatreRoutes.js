@@ -9,8 +9,6 @@ router.post("/create", async (req, res) => {
     const newTheatre = await new Theatre({
       theatreName: req.body.theatreName,
       movieName: req.body.movieName,
-      showTimings: req.body.showTimings,
-      pricePerTicket: req.body.pricePerTicket,
     }).save();
     req.body.showTimings.map((show) => {
       new ShowSchema({
