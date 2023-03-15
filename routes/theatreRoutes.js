@@ -29,15 +29,6 @@ router.post("/create", async (req, res) => {
 //     })
 // })
 
-router.get("/", async (req, res) => {
-  try {
-    const theatre = await Theatre.find({});
-    res.status(200).send(theatre);
-  } catch (error) {
-    console.log(error);
-    res.status(500).json("Internal server error");
-  }
-});
 
 router.get("/query", async (req, res) => {
   try {
