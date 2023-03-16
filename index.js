@@ -28,6 +28,7 @@ app.get("/",(req,res)=>{
 
 
 app.use(cors())
+app.use("/shows",ShowRoutes)
 app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
 app.use("/clientLogin",loginClient)
@@ -43,7 +44,7 @@ app.use("/loginAdmin",loginAdmin)
 
 app.use("/booking",isAuthorized,bookingRoutes)
 
-app.use("/shows",ShowRoutes)
+
 
 
 app.listen(process.env.PORT)
