@@ -31,7 +31,7 @@ var corsOptions = {
   };
 
 
-app.use(cors(corsOptions))
+
 
 app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
@@ -50,4 +50,5 @@ app.use("/booking",isAuthorized,bookingRoutes)
 
 app.use("/shows",ShowRoutes)
 
+app.use(cors(corsOptions))
 app.listen(process.env.PORT)
