@@ -28,11 +28,26 @@ router.put("/update",async(req,res)=>{
             const currentQuery = req.query._id
             const response= await ShowSchema.findByIdAndUpdate(currentQuery ,{
                 seatsBooked:req.body.seatsBooked
-            })
+            })  
         }
         res.status(200).send("Updated Sucessfully")
     } catch (error) {
         res.status(500).send("Internal Server Error")
     }
 })
+
+router.put("/upt",async(req,res)=>{
+    try {
+        if(req.query){
+            let queryNow = req.query._id
+            let response = await ShowSchema.findByIdAndUpdate(queryNow,{
+                seatsBooked:req.body.seatsBooked
+            })
+        }
+        res.status(200).json({message:"Updated Sucessfully"})
+    } catch (error) {
+        res.status(500).send("Internal Server Error")
+    }
+})
+
 export const ShowRoutes =router
