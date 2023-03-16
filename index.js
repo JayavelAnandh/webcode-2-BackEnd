@@ -26,7 +26,7 @@ app.get("/",(req,res)=>{
     res.send("Hi Welcome!!!")
 })
 
-app.use(cors());
+app.use(cors())
 
 app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
