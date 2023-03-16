@@ -26,7 +26,12 @@ app.get("/",(req,res)=>{
     res.send("Hi Welcome!!!")
 })
 
-app.use(cors())
+var corsOptions = {
+    origin: "http://localhost:3000"
+  };
+
+
+app.use(cors(corsOptions))
 
 app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
