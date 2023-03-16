@@ -26,13 +26,8 @@ app.get("/",(req,res)=>{
     res.send("Hi Welcome!!!")
 })
 
-var corsOptions = {
-    origin: "http://localhost:3000"
-  };
 
-
-
-
+app.use(cors())
 app.use("/client",clientRoutes)
 app.use("/clientSignup",signUpClient)
 app.use("/clientLogin",loginClient)
@@ -50,5 +45,5 @@ app.use("/booking",isAuthorized,bookingRoutes)
 
 app.use("/shows",ShowRoutes)
 
-app.use(cors(corsOptions))
+
 app.listen(process.env.PORT)
